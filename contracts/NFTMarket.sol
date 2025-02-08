@@ -107,8 +107,8 @@ contract NFTMarket is ReentrancyGuard {
   }
 
   /* Function to remove market sale */
-  /* clears idToMarketItem[index] and soft deletes index from mapping*/
-  /* transfer ownership of the item back to seller and returns listing fee to seller*/
+  /* clears idToMarketItem[index] and soft deletes index from mapping */
+  /* transfer ownership of the item back to seller and returns listing fee to seller */
   function removeMarketSale(
     address nftContract,
     uint256 itemId
@@ -164,7 +164,7 @@ contract NFTMarket is ReentrancyGuard {
     return items;
   }
 
-  /** Function to get all listing history of of a given token given token. Excludes de-listings */
+  /** Function to get all listing history of a given token. Excludes de-listings */
   function fetchMarketItemHistory(uint256 _tokenId) public view returns (MarketItem[] memory) {
     uint totalItemCount = _itemIds.current();
     uint itemCount = 0;
@@ -187,5 +187,4 @@ contract NFTMarket is ReentrancyGuard {
     }
     return items;
   }
-
 }
